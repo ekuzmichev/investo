@@ -44,14 +44,18 @@ def scalacOptionsVersion(scalaVersion: String) =
     case _             => crossScalaOptions :+ "-Ypartial-unification"
   }
 
-lazy val root = (project in file("."))
-  .settings(
-    name := projectName,
-    libraryDependencies ++= Seq(
-      libs.scalaTest % Test
-    ),
-    releasePublishArtifactsAction := PgpKeys.publishSigned.value
-  )
+lazy val root =
+  project
+    .in(file("."))
+    .aggregate(
+      `investment-dm`
+    )
+
+lazy val `investment-dm` =
+  project
+    .settings(
+      libraryDependencies ++= Seq(libs.scalaTest % Test)
+    )
 
 lazy val libs = new {
   val scalaTestV = "3.1.1"
