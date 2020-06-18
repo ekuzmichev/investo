@@ -1,4 +1,4 @@
-val projectName = "project-name" // TODO: Change it
+val projectName = "investo"
 
 ThisBuild / organization := "io.github.ekuzmichev"
 ThisBuild / organizationName := "ekuzmichev"
@@ -20,7 +20,7 @@ ThisBuild / developers := List(
   )
 )
 
-ThisBuild / description := "Some description" // TODO: Change it
+ThisBuild / description := "Application for investors to keep track of the investments"
 ThisBuild / licenses := List("MIT" -> url("http://opensource.org/licenses/MIT"))
 ThisBuild / homepage := Some(url(s"https://github.com/ekuzmichev/$projectName"))
 
